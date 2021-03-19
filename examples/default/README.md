@@ -30,7 +30,10 @@ No resources.
 
 ## Inputs
 
-No input.
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| access\_key | Credentials: AWS access key. | `string` | n/a | yes |
+| secret\_key | Credentials: AWS secret key. Pass this as a variable, never write password in the code. | `string` | n/a | yes |
 
 ## Outputs
 
