@@ -49,7 +49,14 @@ No Modules.
 
 ## Outputs
 
-No output.
+| Name | Description |
+|------|-------------|
+| log\_group\_arn | The CloudWatch log group arn. |
+| log\_group\_id | The CloudWatch log group ID. |
+| log\_group\_name | The CloudWatch log group name. |
+| log\_kms\_alias\_arn | The Amazon Resource Name (ARN) of the log group key alias. |
+| log\_kms\_key\_arn | The Amazon Resource Name (ARN) of the log group key. |
+| log\_kms\_key\_id | Globally unique identifier for the log group key. |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Versioning
