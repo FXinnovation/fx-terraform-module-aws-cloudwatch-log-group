@@ -28,7 +28,17 @@ No Modules.
 
 ## Inputs
 
-No input.
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| log\_encryption\_enabled | Choose whether the CloudWatch log encryption is enabled (highly recommended). | `bool` | `true` | no |
+| log\_group\_name | The name for the log group. | `string` | n/a | yes |
+| log\_kms\_deletion\_window\_in\_days | The duration in days after which the key is deleted after destruction of the resource. Defaults to 30 days. | `number` | `30` | no |
+| log\_kms\_enable\_rotation | Choose whether the key rotation is enabled. Defaults to false. This is highly recommended to enable it. | `bool` | `true` | no |
+| log\_kms\_key\_create | Choose whether we should create the KMS key for log encryption or not. Defaults to false: we have to pass a KMS key name. | `bool` | `true` | no |
+| log\_kms\_key\_name | The KMS key name for log encryption. Will be used as alias name. | `string` | `null` | no |
+| log\_retention\_days | The number of days you want to retain log events on CloudWatch. | `number` | `7` | no |
+| prefix | A prefix for deployment, will be used for each resource name. | `string` | n/a | yes |
+| tags | Default tags to be applied to all taggable resources. | `map(any)` | `{}` | no |
 
 ## Outputs
 
