@@ -1,7 +1,7 @@
 /**
  * Test case #03:
  *
- * - encryption should be enabled.
+ * - encryption should be enabled (enabled by default).
  * - kms key should NOT be created (external KMS).
  * - kms key rotation should be enabled (enabled by default).
  * - kms key deletion window should be 7 days.

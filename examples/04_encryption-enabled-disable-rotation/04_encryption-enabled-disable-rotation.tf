@@ -1,8 +1,8 @@
 /**
  * Test case #04:
  *
- * - encryption should be enabled.
- * - kms key should be created.
+ * - encryption should be enabled (enabled by default).
+ * - kms key should be created (enabled by default).
  * - kms key rotation should be disabled.
  * - kms key deletion window should be 7 days.
  * - log retention days should be 731 days.

@@ -1,6 +1,6 @@
-# terraform-module-multi-template
+# terraform-module-aws-cloudwatch-log-group
 
-Template repository for public terraform modules
+Generic module which create a CloudWatch log group, with encryption (it will encrypt by default and create a KMS key) and appropriated policies.
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

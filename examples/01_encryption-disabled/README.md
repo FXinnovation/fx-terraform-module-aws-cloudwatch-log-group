@@ -1,4 +1,10 @@
-# Default example
+# terraform-module-aws-cloudwatch-log-group
+
+**Test case #01:**
+
+- encryption should be **disabled**.
+- kms key should **NOT be created**.
+- log retention days should be `3` days.
 
 ## Usage
 
