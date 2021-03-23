@@ -18,15 +18,21 @@
 
 ## Providers
 
-No provider.
+| Name | Version |
+|------|---------|
+| random | >= 3.0 |
 
 ## Modules
 
-No Modules.
+| Name | Source | Version |
+|------|--------|---------|
+| test_01 | ../../ |  |
 
 ## Resources
 
-No resources.
+| Name |
+|------|
+| [random_string](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string) |
 
 ## Inputs
 
@@ -37,5 +43,12 @@ No resources.
 
 ## Outputs
 
-No output.
+| Name | Description |
+|------|-------------|
+| test\_01\_log\_group\_arn | n/a |
+| test\_01\_log\_group\_id | n/a |
+| test\_01\_log\_group\_name | n/a |
+| test\_01\_log\_kms\_alias\_arn | n/a |
+| test\_01\_log\_kms\_key\_arn | n/a |
+| test\_01\_log\_kms\_key\_id | n/a |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
