@@ -39,7 +39,7 @@ module "test_04" {
   log_group_name = "test04"
 
   log_kms_key_name                = "kms/log"
-  log_kms_enable_rotation         = false #tfsec:ignore:AWS019
+  log_kms_enable_rotation         = false
   log_kms_deletion_window_in_days = 7
 
   log_retention_days = 0

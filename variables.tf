@@ -4,7 +4,7 @@
 
 variable "tags" {
   description = "Default tags to be applied to all taggable resources."
-  type        = map(any)
+  type        = map(string)
   default     = {}
 }
 
@@ -39,7 +39,7 @@ variable "log_group_name" {
 }
 
 variable "log_kms_key_create" {
-  description = "Choose whether we should create the KMS key for log encryption or not. Defaults to false: we have to pass a KMS key name."
+  description = "Choose whether we should create the KMS key for log encryption or not. Defaults to true."
   type        = bool
   default     = true
 }
@@ -51,7 +51,7 @@ variable "log_kms_key_name" {
 
   validation {
     condition     = (can(regex("^[\\w\\/-]{1,32}$", var.log_kms_key_name)) || var.log_kms_key_name == null)
-    error_message = "The KMS key name for logs must match ^[\\w\\/-]{1,32}$."
+    error_message = "The KMS key name for logs must match ^[\\w\\/-]{1,32}$ or must be null (only if log encryption is disabled)."
   }
 }
 

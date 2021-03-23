@@ -1,12 +1,4 @@
 #####
-# General Data
-#####
-
-data "aws_caller_identity" "current" {}
-data "aws_partition" "current" {}
-data "aws_region" "current" {}
-
-#####
 # CloudWatch Log Group
 #####
 
@@ -38,7 +30,7 @@ resource "aws_kms_key" "this" {
   tags = merge(
     local.tags,
     {
-      Name = var.log_kms_key_name
+      Name = format("%s-%s", var.prefix, var.log_kms_key_name)
     }
   )
 }

@@ -41,14 +41,14 @@ data "aws_region" "current" {}
 
 resource "aws_kms_key" "test_03" {
   description             = "Test 03: KMS Key for logs encryption."
-  policy                  = element(concat(data.aws_iam_policy_document.test_03.*.json, [""]), 0)
+  policy                  = data.aws_iam_policy_document.test_03.json
   deletion_window_in_days = 7
   enable_key_rotation     = true
 }
 
 resource "aws_kms_alias" "test_03" {
   name          = "alias/tflg${local.random_03}/kms/log"
-  target_key_id = element(concat(aws_kms_key.test_03.*.key_id, [""]), 0)
+  target_key_id = aws_kms_key.test_03.key_id
 }
 
 data "aws_iam_policy_document" "test_03" {

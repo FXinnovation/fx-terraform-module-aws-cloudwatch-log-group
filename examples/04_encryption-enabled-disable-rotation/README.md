@@ -55,8 +55,23 @@
 |------|-------------|
 | test\_04\_log\_group\_arn | n/a |
 | test\_04\_log\_group\_id | n/a |
+| test\_04\_log\_group\_kms\_key\_id | n/a |
 | test\_04\_log\_group\_name | n/a |
+| test\_04\_log\_group\_retention\_in\_days | n/a |
+| test\_04\_log\_group\_tags | n/a |
 | test\_04\_log\_kms\_alias\_arn | n/a |
+| test\_04\_log\_kms\_alias\_id | n/a |
+| test\_04\_log\_kms\_alias\_name | n/a |
+| test\_04\_log\_kms\_alias\_target\_key\_arn | n/a |
+| test\_04\_log\_kms\_alias\_target\_key\_id | n/a |
 | test\_04\_log\_kms\_key\_arn | n/a |
+| test\_04\_log\_kms\_key\_customer\_master\_key\_spec | n/a |
+| test\_04\_log\_kms\_key\_deletion\_window\_in\_days | n/a |
+| test\_04\_log\_kms\_key\_description | n/a |
+| test\_04\_log\_kms\_key\_enable\_rotation | n/a |
 | test\_04\_log\_kms\_key\_id | n/a |
+| test\_04\_log\_kms\_key\_is\_enabled | n/a |
+| test\_04\_log\_kms\_key\_tags | n/a |
+| test\_04\_log\_kms\_key\_usage | n/a |
+| test\_04\_log\_kms\_resource\_id | n/a |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
