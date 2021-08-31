@@ -1,5 +1,5 @@
 /**
- * Test case #02:
+ * Test case: encryption enabled, create a KMS key
  *
  * - encryption should be enabled (enabled by default).
  * - kms key should be created (created by default).
@@ -12,7 +12,7 @@
 # Generate Random String
 #####
 
-resource "random_string" "test_02" {
+resource "random_string" "test_encryption_enabled_create_kms" {
   length  = 8
   special = false
   upper   = false
@@ -24,19 +24,19 @@ resource "random_string" "test_02" {
 #####
 
 locals {
-  random_02 = random_string.test_02.result
+  random_encryption_enabled_create_kms = random_string.test_encryption_enabled_create_kms.result
 }
 
 #####
 # Test
 #####
 
-module "test_02" {
+module "test_encryption_enabled_create_kms" {
   source = "../../"
 
-  prefix = "tflg${local.random_02}"
+  prefix = "tflg${local.random_encryption_enabled_create_kms}"
 
-  log_group_name = "test02"
+  log_group_name = "test_encryption_enabled_create_kms"
 
   log_kms_key_name                = format("%skmslog", local.random_encryption_enabled_create_kms)
   log_kms_deletion_window_in_days = 7
@@ -45,6 +45,6 @@ module "test_02" {
 
   tags = {
     context   = "test"
-    test-name = "test_02"
+    test-name = "test_encryption_enabled_create_kms"
   }
 }

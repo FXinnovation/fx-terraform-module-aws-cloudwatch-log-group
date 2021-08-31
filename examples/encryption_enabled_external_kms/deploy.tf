@@ -1,5 +1,5 @@
 /**
- * Test case #03:
+ * Test case: encryption enabled, external KMS
  *
  * - encryption should be enabled (enabled by default).
  * - kms key should NOT be created (external KMS).
@@ -12,7 +12,7 @@
 # Generate Random String
 #####
 
-resource "random_string" "test_03" {
+resource "random_string" "test_encryption_enabled_external_kms" {
   length  = 8
   special = false
   upper   = false
@@ -24,7 +24,7 @@ resource "random_string" "test_03" {
 #####
 
 locals {
-  random_03 = random_string.test_03.result
+  random_encryption_enabled_create_kms = random_string.test_encryption_enabled_external_kms.result
 }
 
 #####
@@ -39,19 +39,19 @@ data "aws_region" "current" {}
 # Create External Resources
 #####
 
-resource "aws_kms_key" "test_03" {
-  description             = "Test 03: KMS Key for logs encryption."
-  policy                  = data.aws_iam_policy_document.test_03.json
+resource "aws_kms_key" "test_encryption_enabled_external_kms" {
+  description             = "Test encryption_enabled_create_kms: KMS Key for logs encryption."
+  policy                  = data.aws_iam_policy_document.test_encryption_enabled_external_kms.json
   deletion_window_in_days = 7
   enable_key_rotation     = true
 }
 
-resource "aws_kms_alias" "test_03" {
-  name          = "alias/tflg${local.random_03}/kms/log"
-  target_key_id = aws_kms_key.test_03.key_id
+resource "aws_kms_alias" "test_encryption_enabled_external_kms" {
+  name          = "alias/tflg${local.random_encryption_enabled_create_kms}/kms/log"
+  target_key_id = aws_kms_key.test_encryption_enabled_external_kms.key_id
 }
 
-data "aws_iam_policy_document" "test_03" {
+data "aws_iam_policy_document" "test_encryption_enabled_external_kms" {
   statement {
     sid = "AllowCloudWatchLogs01"
 
@@ -106,13 +106,13 @@ data "aws_iam_policy_document" "test_03" {
 # Test
 #####
 
-module "test_03" {
+module "test_encryption_enabled_external_kms" {
   source = "../../"
 
-  prefix = "tflg${local.random_03}"
+  prefix = "tflg${local.random_encryption_enabled_create_kms}"
 
   log_encryption_enabled = true
-  log_group_name         = "test03"
+  log_group_name         = "test_encryption_enabled_external_kms"
 
   log_kms_key_create = false
   log_kms_key_name   = format("%skmslog", local.random_encryption_enabled_create_kms)
@@ -121,11 +121,11 @@ module "test_03" {
 
   tags = {
     context   = "test"
-    test-name = "test_03"
+    test-name = "test_encryption_enabled_external_kms"
   }
 
   depends_on = [
-    aws_kms_key.test_03,
-    aws_kms_alias.test_03
+    aws_kms_key.test_encryption_enabled_external_kms,
+    aws_kms_alias.test_encryption_enabled_external_kms
   ]
 }
