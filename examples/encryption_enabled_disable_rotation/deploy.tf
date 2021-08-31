@@ -38,7 +38,7 @@ module "test_04" {
 
   log_group_name = "test04"
 
-  log_kms_key_name                = "kms/log"
+  log_kms_key_name                = format("%skmslog", local.random_encryption_enabled_create_kms)
   log_kms_enable_rotation         = false
   log_kms_deletion_window_in_days = 7
 

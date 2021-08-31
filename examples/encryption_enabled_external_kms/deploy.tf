@@ -115,7 +115,7 @@ module "test_03" {
   log_group_name         = "test03"
 
   log_kms_key_create = false
-  log_kms_key_name   = "kms/log"
+  log_kms_key_name   = format("%skmslog", local.random_encryption_enabled_create_kms)
 
   log_retention_days = 14
 

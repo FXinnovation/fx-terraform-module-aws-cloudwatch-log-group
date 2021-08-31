@@ -38,7 +38,7 @@ module "test_02" {
 
   log_group_name = "test02"
 
-  log_kms_key_name                = "kms/log"
+  log_kms_key_name                = format("%skmslog", local.random_encryption_enabled_create_kms)
   log_kms_deletion_window_in_days = 7
 
   log_retention_days = 0
