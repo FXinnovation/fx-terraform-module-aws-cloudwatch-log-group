@@ -15,6 +15,7 @@ resource "aws_cloudwatch_log_group" "this" {
   )
 }
 
+
 #####
 # CloudWatch Log Group KMS key
 #####
@@ -41,6 +42,7 @@ resource "aws_kms_alias" "this" {
   name          = local.log_kms_key_alias_name
   target_key_id = element(concat(aws_kms_key.this.*.key_id, [""]), 0)
 }
+
 
 #####
 # CloudWatch Log Group Policy

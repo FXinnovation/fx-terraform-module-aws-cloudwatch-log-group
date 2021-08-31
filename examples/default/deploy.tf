@@ -17,6 +17,7 @@ resource "random_string" "test_default" {
   number  = true
 }
 
+
 #####
 # Set Locals
 #####
@@ -24,6 +25,7 @@ resource "random_string" "test_default" {
 locals {
   random_default = random_string.test_default.result
 }
+
 
 #####
 # Test

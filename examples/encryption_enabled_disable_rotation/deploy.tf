@@ -19,6 +19,7 @@ resource "random_string" "test_encryption_enabled_disable_rotation" {
   number  = true
 }
 
+
 #####
 # Set Locals
 #####
@@ -26,6 +27,7 @@ resource "random_string" "test_encryption_enabled_disable_rotation" {
 locals {
   random_encryption_enabled_create_kms = random_string.test_encryption_enabled_disable_rotation.result
 }
+
 
 #####
 # Test

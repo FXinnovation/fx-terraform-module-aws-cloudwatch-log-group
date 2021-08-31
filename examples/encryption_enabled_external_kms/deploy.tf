@@ -19,6 +19,7 @@ resource "random_string" "test_encryption_enabled_external_kms" {
   number  = true
 }
 
+
 #####
 # Set Locals
 #####
@@ -27,6 +28,7 @@ locals {
   random_encryption_enabled_create_kms = random_string.test_encryption_enabled_external_kms.result
 }
 
+
 #####
 # General Data
 #####
@@ -34,6 +36,7 @@ locals {
 data "aws_caller_identity" "current" {}
 data "aws_partition" "current" {}
 data "aws_region" "current" {}
+
 
 #####
 # Create External Resources
@@ -101,6 +104,7 @@ data "aws_iam_policy_document" "test_encryption_enabled_external_kms" {
     resources = ["*"]
   }
 }
+
 
 #####
 # Test
