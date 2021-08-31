@@ -37,6 +37,7 @@ module "test_01" {
   log_encryption_enabled = false
   log_group_name         = "test01"
   log_retention_days     = 3
+  log_kms_key_create     = false
 
   tags = {
     context   = "test"
