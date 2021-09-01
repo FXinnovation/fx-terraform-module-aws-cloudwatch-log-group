@@ -50,7 +50,7 @@ resource "aws_kms_key" "test_encryption_enabled_external_kms" {
 }
 
 resource "aws_kms_alias" "test_encryption_enabled_external_kms" {
-  name          = "alias/tflg${local.random_encryption_enabled_create_kms}/kms/log"
+  name          = "alias/tflg${local.random_encryption_enabled_create_kms}/kmslog"
   target_key_id = aws_kms_key.test_encryption_enabled_external_kms.key_id
 }
 
@@ -119,7 +119,7 @@ module "test_encryption_enabled_external_kms" {
   log_group_name         = "test_encryption_enabled_external_kms"
 
   log_kms_key_create = false
-  log_kms_key_name   = format("%skmslog", local.random_encryption_enabled_create_kms)
+  log_kms_key_name   = "kmslog"
 
   log_retention_days = 14
 
