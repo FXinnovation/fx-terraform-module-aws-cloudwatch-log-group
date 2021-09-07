@@ -32,6 +32,7 @@ output "log_group_tags" {
   value       = aws_cloudwatch_log_group.this.tags
 }
 
+
 #####
 # Log Group KMS Key
 #####
@@ -85,6 +86,7 @@ output "log_kms_key_tags" {
   description = "The tags assigned to the KMS key."
   value       = element(concat(aws_kms_key.this.*.tags, [""]), 0)
 }
+
 
 #####
 # Log Group KMS Key Alias

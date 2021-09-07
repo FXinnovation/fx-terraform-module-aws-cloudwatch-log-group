@@ -8,10 +8,10 @@ locals {
     var.log_group_name
   )
 
-  log_kms_key_alias_name = format(
-    "alias/%s/%s",
-    var.prefix,
-    var.log_kms_key_name
+  log_kms_key_alias_name = (
+    var.log_encryption_enabled ?
+    format("alias/%s/%s", var.prefix, var.log_kms_key_name) :
+    ""
   )
 
   log_kms_key_id = (
